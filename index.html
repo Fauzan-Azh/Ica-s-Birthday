@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/sd.jpg"/>
+</head>
+<body>
+    <div class="loader-container" id="loader">
+        <div class="loader-box">
+            <h1>ICA'S CONSOLE</h1>
+            <p>> INITIALIZING...</p>
+            <div class="progress-bar-container"><div class="progress-bar" id="progress-bar"></div></div>
+            <p id="progress-percent">0%</p>
+            <p class="smile">SMILE DONG CAA 😃</p>
+        </div>
+    </div>
+    
+    <audio id="music-player-audio"></audio>
+    <audio id="background-sound" src="music/0. Iframe L'amore dice ciao (From _La matriarca - The Libertine_) [1GE-9dHNS-8].mp3" loop></audio>
+
+    <div class="gameboy hidden" id="gameboy-content">
+        <div class="gameboy-top"><div class="led"></div></div>
+
+        <div class="screen-container">
+            <div class="screen-title">special edition for icaa</div>
+            <div class="screen">
+                <div class="screen-content" id="screen-home"><br><br><br><br><br><br><br><br><h1>Happy Birthday Icaa!</h1><p>Press Start Button</p></div>
+
+                <div class="screen-content hidden" id="screen-message">
+                    <h2>Message</h2>
+                    <p class="message-text" id="message-text-target"></p>
+                    <div class="message-buttons">
+                        <button class="btn-message-nav" id="btn-skip">SKIP</button>
+                        <button class="btn-message-nav hidden" id="btn-next-gallery">SELANJUTNYA</button>
+                        <button class="btn-message-nav hidden" id="btn-back">KEMBALI</button>
+                    </div>
+                </div>
+
+                <div class="screen-content hidden" id="screen-gallery">
+                    <div class="gallery-header"><h2>Gallery</h2><p>PHOTOBOX MILIK ICA😃</p></div>
+                    <div class="gallery-content">
+                        <div id="gallery-start"><p>Photobox siap digunakan</p><button id="btn-mulai-cetak">MULAI CETAK</button></div>
+                        <div id="gallery-photobox" class="hidden"><p id="gallery-status"></p><div id="gallery-grid"></div><button id="btn-print-again" class="hidden">CETAK ULANG</button></div>
+                    </div>
+                    <div class="gallery-nav"><button id="btn-gallery-next">SELANJUTNYA</button><button id="btn-gallery-back">KEMBALI</button></div>
+                </div>
+
+                <div class="screen-content hidden" id="screen-music">
+                    <div id="music-player-container">
+                        <h2>Music Player</h2>
+                        <img src="" alt="Album Art" id="album-art">
+                        <div id="song-info">
+                            <p id="song-title">Song Title</p>
+                            <p id="song-artist">Artist</p>
+                        </div>
+                        <div id="progress-container-music">
+                            <div id="current-time">0:00</div>
+                            <div id="progress-bar-wrapper">
+                                <div id="progress-bar-fill"></div>
+                            </div>
+                            <div id="total-duration">0:00</div>
+                        </div>
+                        <div id="music-controls">
+                            <button id="btn-prev">⏮</button>
+                            <button id="btn-play-pause">▶</button>
+                            <button id="btn-next">⏭</button>
+                        </div>
+                        <h3 class="playlist-title">PLAYLIST:</h3>
+                        <div id="playlist-container">
+                            </div>
+                    </div>
+                     <div class="gallery-nav">
+                        <button id="btn-music-next">SELANJUTNYA</button>
+                        <button id="btn-music-back">KEMBALI</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="brand"><span>ica's console</span></div>
+        <div class="controls"><div class="d-pad"></div><div class="action-buttons"><button class="btn" id="btn-message">MESSAGE</button><button class="btn" id="btn-gallery">GALLERY</button><button class="btn" id="btn-music">MUSIC</button><button class="btn" id="btn-start">START</button></div><div class="ab-buttons"><div class="btn-b">R</div><div class="btn-a">A</div></div></div>
+        <div class="start-select"><div class="select-btn"></div><div class="start-btn"></div></div>
+        <div class="speaker"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

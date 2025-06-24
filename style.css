@@ -1,0 +1,371 @@
+/* ======================= */
+/* --- Loader Styles --- */
+/* ======================= */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader-box {
+    width: 300px;
+    padding: 20px;
+    border: 3px solid #00ff00;
+    border-radius: 5px;
+    text-align: center;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.loader-box h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.loader-box p {
+    font-size: 12px;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 20px;
+    border: 2px solid #00ff00;
+    padding: 2px;
+    margin: 15px 0 5px 0;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #00ff00;
+    transition: width 0.1s linear;
+}
+
+#progress-percent {
+    font-size: 12px;
+}
+
+.smile {
+    text-align: center !important;
+    margin-top: 15px !important;
+}
+
+/* ======================= */
+/* --- Styles Utama --- */
+/* ======================= */
+:root {
+    --pixel-font: 'Press Start 2P', cursive;
+    --gameboy-bg: #EAEAEA;
+    --screen-bg: #9ead86;
+    --screen-text: #2c3b21;
+    --d-pad-bg: #333;
+    --btn-blue: #3D85C6;
+    --btn-red: #CF2A27;
+    --btn-purple: #9900FF;
+    --btn-green: #6AA84F;
+    --btn-ab: #A61C00;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #111;
+    background-image: url('https://i.pinimg.com/originals/c1/9c/56/c19c565d52b9b94689aa6b19a1038520.gif');
+    background-size: cover;
+    background-position: center;
+    font-family: var(--pixel-font);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ======================= */
+/* --- Gameboy Styles --- */
+/* ======================= */
+.gameboy {
+    /* --- PERBAIKAN: Ukuran Gameboy dikecilkan sedikit --- */
+    width: 300px;
+    background-color: var(--gameboy-bg);
+    border-radius: 10px 10px 50px 10px;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3), inset 0 0 5px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: opacity 0.5s ease;
+}
+
+.gameboy-top {
+    height: 10px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    position: relative;
+}
+
+.led {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--btn-red);
+    border-radius: 50%;
+    border: 1px solid #333;
+}
+
+.screen-container {
+    background-color: #777;
+    padding: 15px;
+    border-radius: 10px 10px 30px 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.screen-title {
+    font-size: 6px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.screen {
+    background-color: var(--screen-bg);
+    color: var(--screen-text);
+    height: 350px;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-shadow: 1px 1px #8a9c79;
+    overflow-y: auto;
+}
+
+.screen-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.screen h1 { font-size: 20px; margin: 0; }
+.screen h2 { font-size: 16px; margin: 0 0 10px 0; }
+.screen p { font-size: 12px; margin: 10px 0 0 0; line-height: 1.5; }
+
+/* --- Style Pesan --- */
+.message-text {
+    height: 250px;
+    overflow-y: auto;
+    text-align: left;
+    font-size: 10px !important;
+    width: 100%;
+    flex-grow: 1;
+}
+.message-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
+.btn-message-nav { color: white; border: none; font-family: var(--pixel-font); font-size: 10px; cursor: pointer; padding: 10px 15px; border-radius: 5px; box-shadow: 0 3px #0000004d; }
+#btn-next-gallery { background-color: var(--btn-green); }
+#btn-back { background-color: var(--btn-red); }
+#btn-skip { background-color: var(--btn-blue); }
+
+/* --- Style Galeri --- */
+#screen-gallery { justify-content: space-between !important; }
+.gallery-header { width: 100%; border-bottom: 2px solid var(--screen-text); padding-bottom: 5px; margin-bottom: 5px; }
+.gallery-header h2 { margin: 0; }
+.gallery-header p { font-size: 8px; margin: 5px 0 0 0; }
+.gallery-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    overflow-y: auto;
+    padding-top: 10px;
+}
+#gallery-start button, #gallery-photobox #btn-print-again { font-family: var(--pixel-font); border: none; color: white; padding: 8px 12px; font-size: 10px; border-radius: 5px; cursor: pointer; }
+#btn-mulai-cetak { background-color: var(--btn-red); }
+#btn-print-again { background-color: var(--btn-green); margin-top: 10px; }
+#gallery-status { font-size: 10px; margin-bottom: 5px; }
+#gallery-grid { width: 100%; display: flex; flex-direction: column; gap: 8px; }
+.photostrip {
+    background-color: #fff;
+    border: 1px solid #333;
+    padding: 8px;
+    opacity: 0;
+    transform: translateY(20px) rotate(-3deg);
+    transition: all 0.7s ease-in-out;
+}
+.photostrip.reveal {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+}
+.photostrip img, .photostrip .video-thumb { width: 100%; height: 120px; object-fit: cover; border: 2px solid #333; }
+.photostrip .video-thumb { display: flex; justify-content: center; align-items: center; flex-direction: column; background-color: #000; color: white; font-size: 8px; cursor: pointer; }
+.photostrip .video-thumb .play-icon { font-size: 30px; }
+.photostrip .info { display: flex; justify-content: space-between; align-items: center; margin-top: 5px; }
+.photostrip .photo-number { font-size: 10px; color: #333; }
+.photostrip .photo-date { font-size: 8px; background-color: #ffc107; color: #333; padding: 2px 4px; border-radius: 3px; }
+.gallery-nav { display: flex; justify-content: space-around; width: 100%; margin-top: auto; padding-top: 10px; border-top: 2px solid var(--screen-text); }
+.gallery-nav button { font-family: var(--pixel-font); font-size: 10px; padding: 8px 16px; border-radius: 5px; color: white; border: none; cursor: pointer; }
+#btn-gallery-next { background-color: var(--btn-green); }
+#btn-gallery-back { background-color: var(--btn-red); }
+
+/* --- Style Music Player --- */
+#music-player-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#music-player-container h2 {
+    border-bottom: 2px solid var(--screen-text);
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+#album-art {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #333;
+    border-radius: 5px;
+    margin: 5px auto;
+}
+#song-info {
+    text-align: center;
+    margin: 5px 0;
+}
+#song-title {
+    font-size: 10px !important;
+    margin: 0 !important;
+}
+#song-artist {
+    font-size: 8px !important;
+    margin: 5px 0 0 0 !important;
+    color: #555;
+}
+#progress-container-music {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin: 5px 0;
+}
+#current-time, #total-duration {
+    font-size: 8px;
+}
+#progress-bar-wrapper {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background-color: var(--btn-green);
+    border-radius: 5px;
+}
+#music-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 5px 0;
+}
+#music-controls button {
+    background: none;
+    border: none;
+    color: var(--screen-text);
+    font-size: 24px;
+    cursor: pointer;
+}
+.playlist-title {
+    font-size: 10px;
+    margin: 10px 0 5px 0;
+    text-align: left;
+}
+#playlist-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 2px solid #333;
+    background-color: #00000011;
+    padding: 5px;
+    text-align: left;
+}
+.playlist-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 9px;
+    cursor: pointer;
+    border-bottom: 1px solid #00000022;
+}
+.playlist-item:hover {
+    background-color: #00000022;
+}
+.playlist-item.active {
+    background-color: var(--btn-green);
+    color: white;
+    text-shadow: none;
+}
+.playlist-item .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+}
+#btn-music-next, #btn-music-back {
+    font-family: var(--pixel-font);
+    font-size: 10px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#btn-music-next { background-color: var(--btn-green); }
+#btn-music-back { background-color: var(--btn-red); }
+
+
+/* --- Kontrol Bawah --- */
+.brand { font-size: 18px; color: #555; text-align: center; font-style: bold; font-family: ; margin-top: 10px; }
+
+/* --- PERBAIKAN: Layout kontrol utama diubah menjadi flex dan ditengahkan --- */
+.controls { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.action-buttons { width: 160px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.action-buttons .btn { padding: 10px 5px; border: none; color: white; font-family: var(--pixel-font); font-size: 10px; cursor: pointer; border-radius: 5px; box-shadow: 0 3px #0000004d; transition: all 0.1s ease; }
+.action-buttons .btn:active { transform: translateY(2px); box-shadow: 0 1px #0000004d; }
+#btn-start { background-color: var(--btn-green); }
+#btn-message { background-color: var(--btn-blue); }
+#btn-gallery { background-color: var(--btn-red); }
+#btn-music { background-color: var(--btn-purple); }
+.ab-buttons { display: flex; justify-content: center; align-items: center; gap: 20px; width: 100%; }
+.btn-a, .btn-b { width: 45px; height: 45px; border-radius: 50%; background-color: var(--btn-ab); color: var(--gameboy-bg); display: flex; justify-content: center; align-items: center; box-shadow: 2px 2px #00000033; font-size: 18px; }
+
+
+
+/* --- Responsif --- */
+@media (max-width: 450px) {
+    .gameboy {
+        transform: scale(0.9);
+    }
+}
